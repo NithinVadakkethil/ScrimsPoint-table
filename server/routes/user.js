@@ -1,13 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { getTeamDetails, registerTeam } = require('../controllers/userController')
 
 // Define user routes
-router.get('/', (req, res) => {
-  res.send('User Dashboard');
-});
-
-router.get('/profile', (req, res) => {
-  res.send('User Profile');
-});
+router.get('/', getTeamDetails);
+router.post('/details', registerTeam);
 
 module.exports = router;
